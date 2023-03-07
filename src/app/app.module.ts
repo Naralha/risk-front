@@ -29,6 +29,7 @@ import { TreeOrganogramaComponent } from './organograma/tree-organograma/tree-or
 import { FormularioOrganogramaComponent } from './organograma/formulario-organograma/formulario-organograma.component';
 import { EditNameDialogComponent } from './organograma/tree-organograma/edit-name-dialog/edit-name-dialog.component';
 import { FormsModule } from '@angular/forms';
+import { TableComponent } from './funcionario/table/table.component';
 
 
 
@@ -44,6 +45,7 @@ import { FormsModule } from '@angular/forms';
         TreeOrganogramaComponent,
         FormularioOrganogramaComponent,
         EditNameDialogComponent,
+        TableComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],

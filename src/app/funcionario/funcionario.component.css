@@ -6,12 +6,6 @@
     height: 100vh;
   }
   
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
   .form-container {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -29,4 +23,12 @@
     margin-bottom: 10px;
   }
   
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* vertically center the buttons */
+  }
   
+  .button {
+    margin-right: 10px; /* add some space between the buttons */
+  }

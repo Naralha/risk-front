@@ -34,4 +34,6 @@ mat-tree-node {
     margin-bottom: 10px;
   }
   
-  
+  .action-button {
+    margin-right: 10px;
+  }

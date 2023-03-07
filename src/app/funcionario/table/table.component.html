@@ -1,0 +1,21 @@
+<mat-form-field>
+    <input matInput placeholder="Find" (keyup)="applyFilter($event.target.value)">
+</mat-form-field>
+  
+<mat-table [dataSource]="dataSource">
+  
+    <!-- Define the columns -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="age">
+      <mat-header-cell *matHeaderCellDef> Age </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.age}} </mat-cell>
+    </ng-container>
+  
+    <!-- Define the table rows -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
