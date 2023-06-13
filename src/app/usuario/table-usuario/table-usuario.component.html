@@ -1,0 +1,44 @@
+<mat-card class="example-card centered-form">
+    <mat-toolbar color="primary">
+    <span>Usuarios</span>
+  </mat-toolbar>
+  
+  <div class="table-container">
+    <mat-form-field>
+      <input matInput placeholder="Find" (keyup)="applyFilter(e)">
+    </mat-form-field>
+    
+    <mat-table [dataSource]="dataSource" matSort>
+    
+      <ng-container matColumnDef="nome">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Nome <mat-icon>arrow_upward</mat-icon> </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.nvarNome}} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="login">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Login <mat-icon>arrow_upward</mat-icon> </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.idnVarUsuarioCadastro}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="editRow(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="removeRow(element)">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <div *ngIf="element.funcionario != null">
+            <button mat-icon-button disabled>
+                <mat-icon>checked</mat-icon>
+              </button>
+          </div>
+        </mat-cell>
+      </ng-container>
+    
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</mat-card>

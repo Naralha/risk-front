@@ -1,0 +1,35 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar>Risk-Project</mat-toolbar>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let option of options" >
+        <div  [matMenuTriggerFor]="menu">{{ option.name }}</div>
+        <!-- <button mat-button [matMenuTriggerFor]="menu">{{ option.name }}</button> -->
+        <mat-menu #menu="matMenu">
+          <a mat-menu-item *ngFor="let subOption of option.children" [routerLink]="subOption.path">
+            {{ subOption.name }}
+          </a>
+        </mat-menu>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>My App</span>
+    </mat-toolbar>
+    <!-- Add your content here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<!-- <app-login></app-login> -->
+<router-outlet></router-outlet>

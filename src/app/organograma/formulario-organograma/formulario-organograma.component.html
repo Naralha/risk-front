@@ -1,0 +1,22 @@
+<form  (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <mat-label>Select Box 1</mat-label>
+        <mat-select [(ngModel)]="selectedValue1">
+          <mat-option *ngFor="let option of options1" [value]="option.id">
+            {{ option.nvarNome }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label>Select Box 2</mat-label>
+        <mat-select [(ngModel)]="selectedValue2">
+          <mat-option *ngFor="let option of options2" [value]="option.idnVarFuncionario">
+            {{ option.nvarNome }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    <div class="container">
+        <button mat-raised-button color="primary">Submit</button>
+    </div>
+</form>

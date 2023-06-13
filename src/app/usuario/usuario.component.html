@@ -1,0 +1,51 @@
+<mat-card class="example-card centered-form">
+    <mat-card-header>
+        <mat-card-title>Usuario</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="form-container">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <mat-label>Nome:</mat-label>
+            <mat-form-field class="example-full-width">
+            <input matInput placeholder="Nome" formControlName="nome">
+            <mat-error *ngIf="form.get('nome')!.hasError('required')">
+                Nome is required
+            </mat-error>
+            </mat-form-field>
+            <mat-label>Login:</mat-label>
+            <mat-form-field class="example-full-width">
+            <input matInput placeholder="Login" formControlName="login">
+            <mat-error *ngIf="form.get('login')!.hasError('required')">
+                Login is required
+            </mat-error>
+            </mat-form-field>
+            <mat-label>Senha:</mat-label>
+            <mat-form-field class="example-full-width">
+            <input matInput placeholder="Senha" formControlName="senha">
+            <mat-error *ngIf="form.get('senha')!.hasError('required')">
+                Senha is required
+            </mat-error>
+            </mat-form-field>
+            
+            <mat-checkbox [checked]="checked" (change)="toggleFields($event)">É Funcionario</mat-checkbox>
+            <div *ngIf="checked">
+                <mat-label>Email:</mat-label>
+                <mat-form-field class="example-full-width">
+                <input matInput placeholder="Email" formControlName="email">
+                <mat-error *ngIf="form.get('senha')!.hasError('required')">
+                    Email is required
+                </mat-error>
+                </mat-form-field>
+                <mat-label>Descrição:</mat-label>
+                <mat-form-field class="example-full-width">
+                <input matInput placeholder="Descrição" formControlName="descricao">
+                </mat-form-field>
+            </div>
+            
+            <div class="container">
+                <button mat-raised-button class="button" color="primary" type="button" (click)="find()">Find</button>
+                <button mat-raised-button class="button" color="primary">Submit</button>
+            </div>
+        </form>
+        
+    </mat-card-content>
+</mat-card>
