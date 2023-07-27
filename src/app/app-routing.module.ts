@@ -5,6 +5,8 @@ import { FuncionarioComponent } from './funcionario/funcionario.component';
 import { OrganogramaComponent } from './organograma/organograma.component';
 import { TableUsuarioComponent } from './usuario/table-usuario/table-usuario.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { LoginComponent } from './login/login.component';
+import { EmptyComponent } from './empty/empty.component';
 
 const routes: Routes = [
   {path: 'empresa-component', component: EmpresaComponent},
@@ -12,6 +14,8 @@ const routes: Routes = [
   {path: 'organograma-component', component: OrganogramaComponent},
   {path: 'usuario-component', component: UsuarioComponent},
   {path: 'table-usuario-component', component: TableUsuarioComponent},
+  {path: '', component: LoginComponent},
+  {path: 'empty-component', component: EmptyComponent}
 ];
 
 @NgModule({

@@ -4,7 +4,7 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
     <mat-toolbar>Risk-Project</mat-toolbar>
-    <mat-nav-list>
+    <mat-nav-list *ngIf="loginService.isAuthenticated()">
       <mat-list-item *ngFor="let option of options" >
         <div  [matMenuTriggerFor]="menu">{{ option.name }}</div>
         <!-- <button mat-button [matMenuTriggerFor]="menu">{{ option.name }}</button> -->
@@ -17,7 +17,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" class="toolbar">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -26,10 +26,14 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>My App</span>
+      <span>My Alou</span>
+      <span class="logout" (click)="logout()" *ngIf="loginService.isAuthenticated()">
+        Logout
+      </span>
     </mat-toolbar>
     <!-- Add your content here -->
   </mat-sidenav-content>
 </mat-sidenav-container>
 <!-- <app-login></app-login> -->
-<router-outlet></router-outlet>
+<router-outlet *ngIf="loginService.isAuthenticated()"></router-outlet>
+<app-login *ngIf="!loginService.isAuthenticated()"></app-login>

@@ -36,8 +36,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { TableUsuarioComponent } from './usuario/table-usuario/table-usuario.component';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { LoginComponent } from './login/login.component';
-
-
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { EmptyComponent } from './empty/empty.component';
 
 
  
@@ -55,6 +55,7 @@ import { LoginComponent } from './login/login.component';
         UsuarioComponent,
         TableUsuarioComponent,
         LoginComponent,
+        EmptyComponent,
     ],
     providers: [MatPaginator],
     bootstrap: [AppComponent],
@@ -83,7 +84,8 @@ import { LoginComponent } from './login/login.component';
         MatTableModule,
         MatCheckboxModule,
         MatExpansionModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        FlexLayoutModule
     ]
 })
 export class AppModule { 
