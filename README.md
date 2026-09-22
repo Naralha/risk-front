@@ -1,28 +1,32 @@
-# RiskFrontend
+# Risk Front
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
+Frontend React 19 da plataforma Risk, organizado por domínio e alinhado ao padrão visual do Obelisco.
 
-## Development server
+```bash
+cp .env.example .env
+npm install
+npm run dev
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+A API deve estar disponível em `http://localhost:8080/api`. No ambiente local, use `admin` / `password`.
 
-## Code scaffolding
+## Verificação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm run lint
+npm test
+npm run build
+```
 
-## Build
+O frontend anterior em Angular foi removido após a migração para React.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Docker
 
-## Running unit tests
+O ambiente integrado é iniciado pelo backend:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+cd ../risk-organograma
+./infra/local-environment.sh
+```
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# risk-front
+O build multi-stage usa Node 22 e publica os arquivos estáticos com Nginx. No ambiente Docker, chamadas para `/api` são encaminhadas ao serviço backend sem expor endereços internos ao navegador.

@@ -1,41 +1,38 @@
 {
-  "name": "risk-frontend",
-  "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
+  "name": "risk-front",
   "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint src",
+    "test": "vitest run",
+    "preview": "vite preview"
+  },
   "dependencies": {
-    "@angular/animations": "^15.1.0",
-    "@angular/cdk": "^15.1.3",
-    "@angular/common": "^15.1.0",
-    "@angular/compiler": "^15.1.0",
-    "@angular/core": "^15.1.0",
-    "@angular/flex-layout": "^15.0.0-beta.42",
-    "@angular/forms": "^15.1.0",
-    "@angular/material": "^15.2.1",
-    "@angular/platform-browser": "^15.1.0",
-    "@angular/platform-browser-dynamic": "^15.1.0",
-    "@angular/router": "^15.1.0",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.12.0"
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
+    "@tailwindcss/vite": "^4.0.15",
+    "axios": "^1.8.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.4.0",
+    "sonner": "^2.0.1",
+    "tailwindcss": "^4.0.16"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^15.1.1",
-    "@angular/cli": "~15.1.1",
-    "@angular/compiler-cli": "^15.1.0",
-    "@types/jasmine": "~4.3.0",
-    "jasmine-core": "~4.5.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~4.9.4"
+    "@eslint/js": "^9.23.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.23.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "jsdom": "^26.0.0",
+    "vite": "^6.2.3",
+    "vitest": "^5.0.1"
   }
 }
